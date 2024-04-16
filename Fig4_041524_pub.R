@@ -94,7 +94,7 @@ all_clones %>%
   )
 
 
-## Fisher test for association of genotype with CNV mechanism #
+## Fisher test for association of strain with CNV mechanism #
 # Null: Genotypes and CNV mechanisms are independent, no association
 # Alt Hypothesis: CNV mechanism counts observed are dependent on strain
 
@@ -214,13 +214,6 @@ all_clones %>%
   )+
   facet_wrap(~Description, 
              labeller = labeller(Description = my.facet.labs))
-
-# ggsave("scatterplot_Mechs_CopyNum_FacetDescription_020124.png", width = 10, height = 8, bg = "white")
-# ggsave("scatterplot_Mechs_CopyNum_FacetDescription_020124.pdf", width = 10, height = 8, bg = "white")
-# ggsave("scatterplot_Mechs_CopyNum_FacetDescription_Label_020524.png", width = 12, height = 8, bg = "white")
-# ggsave("scatterplot_Mechs_CopyNum_FacetDescription_Label_020524.pdf", width = 12, height = 8, bg = "white")
-
-f=2
 
 # Supplementary Figure S4A ####
 ## Grouped Boxplot of CNV Length by Strain & Generation 
