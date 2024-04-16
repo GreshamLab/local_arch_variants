@@ -5,11 +5,12 @@
 library(CytoExploreR)
 library(tidyverse)
 
-setwd("~/Google Drive/My Drive/greshamlab/projects/EE_GAP1_ArchMuts_Summer2021/data/FCS_by_pop") 
+setwd("~/FCS_by_pop") 
 folders = list.dirs()[-1] #select the FSC file folders in your directory
 folder_name = folders[1] # Make sure it's gap1_1 folder
 
-###### Make Experimental Details - Time Series Per Population Folder #### 
+###### Make Experimental Details File - Time Series Per Population Folder #### 
+# File Already provided in OSF 
 make_exp_details = function(folder_name, samplesheet) {
   files = as_tibble(list.files(paste0(folder_name))) %>%
     separate(value, into = c("well", "sample"), sep = " ", remove = F) %>%
@@ -27,7 +28,7 @@ make_exp_details = function(folder_name, samplesheet) {
   
   write_csv(all, file = paste0(folder_name,"/",folder_name,"_experiment_details.csv"))
 }
-## Only need to run once to make files
+## Only need to run once to make files.  
 map(folders, make_exp_details, samplesheet = "EE_GAP1_ArchMuts_2021_gap1_WT.csv")
 ############ end of making experiment details ##
 
